@@ -1,3 +1,24 @@
+body {
+  background-color: #FFFFFF;
+  color: #414141;
+  font-family: Montserrat;
+
+}
+.blog-header-logo {
+  font-size: 2.25rem;
+  text-align: center;
+}
+.container {
+  width: 1440px;
+  height: 500px;
+}
+.form-control {
+  width: 70%;
+}
 h1 {
-  color: red;
+  line-height: 50px;
+  font-size: 36px;
+  text-align: center;
+
+
 }
