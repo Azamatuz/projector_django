@@ -1,24 +1,46 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat');
+
 body {
   background-color: #FFFFFF;
   color: #414141;
-  font-family: Montserrat;
-
+  font-family: Montserrat, sans-serif;
 }
+
 .blog-header-logo {
   font-size: 2.25rem;
   text-align: center;
 }
+
 .container {
   width: 1440px;
-  height: 500px;
+  height: auto;
 }
+
 .form-control {
   width: 70%;
+  font-size: 15px;
+  color: #414141;
 }
+
 h1 {
-  line-height: 50px;
   font-size: 36px;
-  text-align: center;
+  line-height: 50px;
+}
 
+.nav {
+  min-width: 40px;
+}
+.navbar-toggler-icon {
+  color: black;
+}
+/* not active */
+.nav-pills .nav-link:not(.active) {
+  background-color: inherit;
+  color: #414141;
+}
 
+/* active (faded) */
+.nav-pills .nav-link {
+  background-color: #868e96;
+  color: white;
 }

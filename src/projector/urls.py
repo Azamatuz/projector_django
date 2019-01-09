@@ -18,11 +18,10 @@ from django.conf.urls.static import static
 from django.contrib import admin
 from django.urls import path
 
-from pages.views import home_view, content_view
+from pages.views import home_view
 
 urlpatterns = [
     path('', home_view, name='home'),
-    path('content/', content_view),
     path('admin/', admin.site.urls),
 ]
 

@@ -1,0 +1,41 @@
+{% load staticfiles %}
+
+<section id="federal" class="my-5 align-items-center text-center">
+  <div class="container">
+    <ul class="nav nav-pills mb-3 justify-content-center" id="pills-tab" role="tablist">
+      <li class="nav-item">
+        <a class="nav-link active" id="pills-map-tab" data-toggle="pill" href="#pills-map" role="tab" aria-controls="pills-map" aria-selected="true">Heatmap</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" id="pills-univer-tab" data-toggle="pill" href="#pills-univer" role="tab" aria-controls="pills-univer" aria-selected="false">Top Universities</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" id="pills-disc-tab" data-toggle="pill" href="#pills-disc" role="tab" aria-controls="pills-disc" aria-selected="false">Top Research Descipline</a>
+      </li>
+    </ul>
+  </div>
+  <div class="container">
+    <div class="row mt-5 align-items-center d-flex justify-content-center">
+      <div class="col-11 col-sm-10 col-md-11 col-lg-10">
+        <div class="tab-content" id="pills-tabContent">
+          <div class="tab-pane fade show active" id="pills-map" role="tabpanel" aria-labelledby="pills-map-tab">
+            <img class="img-fluid py-5"src="{% static 'img/map.png' %}" alt="innovation heatmap of Canada">
+          </div>
+          <div class="tab-pane fade" id="pills-univer" role="tabpanel" aria-labelledby="pills-univer-tab">
+            <div>
+                <a href="https://plot.ly/~batukasss/6/?share_key=yjt0JizCzD6LQmIvgTmrVN" target="_blank" title="Top Innov Univ" style="display: block; text-align: center;"><img src="https://plot.ly/~batukasss/6.png?share_key=yjt0JizCzD6LQmIvgTmrVN" alt="Top Innov Univ" style="max-width: 100%;width: 900px;"  width="900" onerror="this.onerror=null;this.src='https://plot.ly/404.png';" /></a>
+                <script data-plotly="batukasss:6" sharekey-plotly="yjt0JizCzD6LQmIvgTmrVN" src="https://plot.ly/embed.js" async></script>
+            </div>
+          </div>
+          <div class="tab-pane fade" id="pills-disc" role="tabpanel" aria-labelledby="pills-disc-tab">
+            <div>
+                <a href="https://plot.ly/~batukasss/8/?share_key=hQTwFIuuOrUG0Fd7f34Bbe" target="_blank" title="Top Research Disc" style="display: block; text-align: center;"><img src="https://plot.ly/~batukasss/8.png?share_key=hQTwFIuuOrUG0Fd7f34Bbe" alt="Top Research Disc" style="max-width: 100%;width: 900px;"  width="900" onerror="this.onerror=null;this.src='https://plot.ly/404.png';" /></a>
+                <script data-plotly="batukasss:8" sharekey-plotly="hQTwFIuuOrUG0Fd7f34Bbe" src="https://plot.ly/embed.js" async></script>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div><!-- /.container -->
+</section>
