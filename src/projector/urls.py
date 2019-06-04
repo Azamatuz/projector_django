@@ -16,15 +16,17 @@ Including another URLconf
 from django.conf import settings
 from django.conf.urls.static import static
 from django.contrib import admin
-from django.urls import path
+from django.urls import path, include
 
 from pages.views import home_view, prov_view
-from projects.views import top_inst_view
+from projects.views import top_inst_view, prov_list 
 
 urlpatterns = [
     path('home', home_view, name='home'),
     path('', top_inst_view),
+    path('tabs', prov_list),
     path('admin/', admin.site.urls),
+    path(r'^currencies/', include('currencies.urls')),
 ]
 
 if settings.DEBUG:

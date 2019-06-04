@@ -1,15 +1,36 @@
 from django.shortcuts import render
 from django.db.models import Count, Sum
-from .models import Project
+from .models import Project, Province
 
 # Create your views here.
 
+def prov_list(request):
+
+    prov_list = ['AB', 'BC', 'MB', 'NB', 'NL', 'NS', 'ON', 'PE', 'QC', 'SK']
+    print(prov_list)
+    print("Hello its here")
+    context = {
+    'data': prov_list
+    }
+    return render(request,'tabs.html', context)
+
+
 def top_inst_view(request):
-    obj = Project.objects.filter(province__contains='AB').values('institution') \
+    prov_list = ['AB', 'BC', 'MB', 'NB', 'NL', 'NS', 'ON', 'PE', 'QC', 'SK']
+  #   obj = Project.objects.filter(province__contains="AB").values('institution') \
+  # .annotate(total_fund=Sum('fund')) \
+  # .order_by('-total_fund')
+    AB = Project.objects.filter(province__name="AB").values('institution') \
   .annotate(total_fund=Sum('fund')) \
   .order_by('-total_fund')
+    AB_projects = Project.objects.filter(province__name='AB').annotate(Count('province'))
+    AB_fund = Project.objects.filter(province__name='AB').annotate(total_fund=Sum('fund'))
+   
     context = {
-        'data': obj,
+        'AB': AB,
+        'AB_projects': AB_projects,
+        'AB_fund': AB_fund,
+        'list': prov_list,
         # Project.objects.filter(province__contains=prov),
         # 'province'    : province.values('sector').annotate(dcount=Count('sector')),
         # 'institution' : obj.institution,

@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+
+{% block tabs %}
+
+<div class="container">
+    <nav class="vanbar navbar-light navbar-expand-md .nav-justified">
+        <button class="navbar-toggler aside-menu-sm-toggler" type="button" data-toggle="aside-menu-show">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <!-- <button type="button" class="navbar-toggler btn-dark" data-toggler="collapse" data-target="myNav" aria-controls="#myNav" aria-label="toggler nav">
+      <span class="navbar-toggler-icon"></span>
+    </button> -->
+        <section class="tabs collapse navbar-collapse justify-content-center" id="#myNav">
+            <div class="nav nav-tabs nav-justified" id="nav-tab" role="tablist">
+                {% for prov in data %}
+                <a class="px-4 nav-item nav-link active" id="nav-"+{{ prov | lower }}+"-tab" data-toggle="tab"
+                    href="#nav-"+{{ prov |lower}} role="tab" aria-selected="true">{{ prov }}</a>
+                {% endfor %}
+
+                {% comment %} <a class="px-4 nav-item nav-link" id="nav-bc-tab" data-toggle="tab" href="#nav-bc"
+                    role="tab" aria-selected="false">BC</a>
+                <a class="px-4 nav-item nav-link" id="nav-mb-tab" data-toggle="tab" href="#nav-mb" role="tab"
+                    aria-selected="false">MB</a>
+                <a class="px-4 nav-item nav-link" id="nav-nl-tab" data-toggle="tab" href="#nav-nl" role="tab"
+                    aria-selected="false">NL</a>
+                <a class="px-4 nav-item nav-link" id="nav-ns-tab" data-toggle="tab" href="#nav-ns" role="tab"
+                    aria-selected="false">NS</a>
+                <a class="px-4 nav-item nav-link" id="nav-on-tab" data-toggle="tab" href="#nav-on" role="tab"
+                    aria-selected="false">ON</a>
+                <a class="px-4 nav-item nav-link" id="nav-pe-tab" data-toggle="tab" href="#nav-pe" role="tab"
+                    aria-selected="true">PE</a>
+                <a class="px-4 nav-item nav-link" id="nav-qc-tab" data-toggle="tab" href="#nav-qc" role="tab"
+                    aria-selected="false">QC</a>
+                <a class="px-4 nav-item nav-link" id="nav-sk-tab" data-toggle="tab" href="#nav-sk" role="tab"
+                    aria-selected="false">SK</a> {% endcomment %}
+            </div>
+        </section>
+    </nav>
+</div>
+{% endblock tabs %}
