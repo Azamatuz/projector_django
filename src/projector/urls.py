@@ -26,7 +26,7 @@ urlpatterns = [
     path('', top_inst_view),
     path('tabs', prov_list),
     path('admin/', admin.site.urls),
-    path(r'^currencies/', include('currencies.urls')),
+
 ]
 
 if settings.DEBUG:

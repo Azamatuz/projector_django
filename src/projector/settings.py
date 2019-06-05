@@ -40,7 +40,7 @@ INSTALLED_APPS = [
 
 
     # third party
-    'currencies',
+
     # own
     'pages',
     'projects',
