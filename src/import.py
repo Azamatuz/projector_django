@@ -45,21 +45,51 @@ import django
 django.setup()
 
 
-from projects.models import Project
+from projects.models import Institution, Leader, Project, Province
+
+
+# for index, row in df_raw.iterrows():
+#     print(index)
+#     project = Project()
+#     project.province    = row[0]
+#     project.institution = row[1]
+#     project.leader      = row[2]
+#     project.fund        = row[3]
+#     project.date        = row[4]
+#     project.keywords    = row[5]
+#     project.sector      = row[6]
+#     project.discipline  = row[7]
+#     project.year        = row[8]
+#     if index == 10387:
+#         break
+#     project.save()
+
+
 
 
 for index, row in df_raw.iterrows():
     print(index)
-    project = Project()
-    project.province    = row[0]
-    project.institution = row[1]
-    project.leader      = row[2]
-    project.fund        = row[3]
-    project.date        = row[4]
-    project.keywords    = row[5]
-    project.sector      = row[6]
-    project.discipline  = row[7]
-    project.year        = row[8]
+    project = Institution()
+    project.name    = row[0]
+
+    if index == 10387:
+        break
+    project.save()
+
+for index, row in df_raw.iterrows():
+    print(index)
+    project = Leader()
+    project.name    = row[0]
+
+    if index == 10387:
+        break
+    project.save()
+
+for index, row in df_raw.iterrows():
+    print(index)
+    project = Province()
+    project.name    = row[0]
+
     if index == 10387:
         break
     project.save()

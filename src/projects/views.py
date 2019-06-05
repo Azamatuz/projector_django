@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.db.models import Count, Sum
-from .models import Project, Province
+from .models import Institution, Leader, Project, Province
 
 # Create your views here.
 
@@ -20,11 +20,10 @@ def top_inst_view(request):
   #   obj = Project.objects.filter(province__contains="AB").values('institution') \
   # .annotate(total_fund=Sum('fund')) \
   # .order_by('-total_fund')
-    AB = Project.objects.filter(province__name="AB").values('institution') \
-  .annotate(total_fund=Sum('fund')) \
+    AB = Institution.objects.annotate(total_fund=Sum('fund')) \
   .order_by('-total_fund')
-    AB_projects = Project.objects.filter(province__name='AB').annotate(Count('province'))
-    AB_fund = Project.objects.filter(province__name='AB').annotate(total_fund=Sum('fund'))
+    # AB_projects = Project.objects.filter(province__name='AB').annotate(Count('province'))
+    # AB_fund = Project.objects.filter(province__name='AB').annotate(total_fund=Sum('fund'))
    
     context = {
         'AB': AB,
